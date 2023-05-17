@@ -1,0 +1,187 @@
+<div class="green-corner">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 456.84 259.17"
+  >
+    <defs>
+      <linearGradient
+        id="a"
+        x1="489.6"
+        y1="435.41"
+        x2="299.29"
+        y2="767.12"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0" class="gradient__primary-color" />
+        <stop offset="1" class="gradient__primary-color-dark" />
+      </linearGradient>
+      <linearGradient
+        id="b"
+        x1="339.93"
+        y1="468.23"
+        x2="700.8"
+        y2="468.23"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.02" stop-color="#3b919d" />
+        <stop offset="0.55" stop-color="#49d4c1" />
+        <stop offset="0.87" stop-color="#aaf16f" />
+        <stop offset="0.89" stop-color="#b8f25c" />
+        <stop offset="0.94" stop-color="#d4f438" />
+        <stop offset="0.98" stop-color="#e6f621" />
+        <stop offset="1" stop-color="#ecf619" />
+      </linearGradient>
+    </defs>
+    <path
+      class="a"
+      d="M293.9,547H450.35l-54.28-68.91,65.44-51.55c29-21.38,67.41-18.51,86.79,6.09,19.84,24.23,16.48,66.75-10.64,89.62L506.24,547H673.76c26.33-61,20.41-131.62-23.41-187.24-64-81.22-182.64-95.31-267.35-33.84l-65.44,51.55-69.62,54.85-4.18,3.29c-13,10.24-14.8,29-4.19,42.42Z"
+      transform="translate(-232.67 -287.83)"
+    />
+    <path
+      class="b"
+      d="M548.76,432.27c19.38,24.59,16,67.11-11.1,90L506.24,547H672.71c12.2-28.42,14.6-52.15,14.9-61.65.75-13.37-10.43-36.16-19.57-47.76-49.36-62.66-142.48-61.51-205.6-11.78l-.47.36C491,404.8,529.38,407.67,548.76,432.27Z"
+      transform="translate(-232.67 -287.83)"
+    />
+  </svg>
+</div>
+<div class="logo-corner"></div>
+
+<div class="login-background">
+  <div class="container-box">
+    <div id="login-view" class="form-section">
+      <b>Generador de whitelabel</b>
+      <!--<input [formControl]="login" class="login-name" ng-model="login" placeholder="{{ 'login_login_placeholder' | translate }}">-->
+
+      <form #whitelabelForm="ngForm" (ngSubmit)="calculateWhitelabel()">
+        <input
+          title="Nombre del whitelabel, se le pondrá el mismo nombre a la carpeta que contenga las imágenes dentro de assets/whitelabel/  Será el mismo nombre que contenga la url de la aplicación para identificar el WL"
+          type="text"
+          id="Name"
+          name="name"
+          #name="ngModel"
+          [(ngModel)]="template.name"
+          placeholder="Nombre"
+          required
+        />
+        <div class="color-input">
+          <input
+            title="Valor de Red en el color principal en formato RGB"
+            type="number"
+            id="R"
+            name="rcolor"
+            #rcolor="ngModel"
+            [(ngModel)]="redColor"
+            placeholder="R"
+            min="0"
+            max="255"
+            required
+          />
+          <input
+            title="Valor de Green en el color principal en formato RGB"
+            type="number"
+            id="G"
+            name="gcolor"
+            #gcolor="ngModel"
+            [(ngModel)]="greenColor"
+            placeholder="G"
+            min="0"
+            max="255"
+            required
+          />
+          <input
+            title="Valor de Blue en el color principal en formato RGB"
+            type="number"
+            id="B"
+            name="bcolor"
+            #bcolor="ngModel"
+            [(ngModel)]="blueColor"
+            placeholder="B"
+            min="0"
+            max="255"
+            required
+          />
+        </div>
+        <div class="images-input">
+          <input
+            title="Altura del logo al ser mostrado en la ventana de login, teniendo en cuenta que el ancho siempre será 236px. Procurad que esta imagen no tenga márgenes"
+            type="number"
+            id="B"
+            name="lLogoHeight"
+            #lLogoHeight="ngModel"
+            [(ngModel)]="loginLogoHeight"
+            placeholder="Login Logo Height"
+            min="0"
+            max="500"
+            required
+          />
+          <!-- <input
+            #fileInput
+            type="file"
+            title="Logo para el login, es sólo para previsualización, habrá que incluirlo en el proyecto de todos modos"
+            name="lgLogo"
+            #lgLogo="ngModel"
+            [(ngModel)]="loginLogo"
+            placeholder="Login Logo"
+          /> -->
+          <input
+            title="Ancho del logo en el navbar de la aplicación, teniendo en cuenta que el alto será 40px. Procurad que esta imagen no tenga márgenes"
+            type="number"
+            id="B"
+            name="nbLogoWidth"
+            #nbLogoWidth="ngModel"
+            [(ngModel)]="navbarLogoWidth"
+            placeholder="Navbar Logo Width"
+            min="0"
+            max="500"
+            required
+          />
+          <!-- <input
+            #fileInput
+            type="file"
+            title="Logo para el navbar, es sólo para previsualización, habrá que incluirlo en el proyecto de todos modos"
+            name="nbLogo"
+            #nbLogo="ngModel"
+            [(ngModel)]="navbarLogo"
+            placeholder="Navbar Logo"
+          /> -->
+        </div>
+
+        <!-- <label>
+          <input
+            class="checkbox"
+            type="checkbox"
+            id="wideumL"
+            #wideumLogo="ngModel"
+            [(checked)]="wideumLogo"
+          />
+          show wideum Logo</label
+        ><br /> -->
+      </form>
+      <!-- <div
+        id="colorResult"
+        style="height:10px; width:100%;margin-bottom:8px; margin-top:-5px;"
+      ></div> -->
+      <!-- <button
+        mat-flat-button
+        class="login-button btn-primary"
+        (click)="calculateWhitelabel()"
+      >
+       [disabled]="login.invalid || password.invalid" 
+        <span> calcular</span>
+      </button> -->
+      <button
+        style="margin-top:10px"
+        mat-flat-button
+        class="login-button btn-primary"
+        (click)="generarJson()"
+      >
+        <!--[disabled]="login.invalid || password.invalid" -->
+        <span>Generar código</span>
+      </button>
+    </div>
+    <div class="logo-section">
+      <div class="login-logo"></div>
+    </div>
+  </div>
+</div>
