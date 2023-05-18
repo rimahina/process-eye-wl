@@ -294,7 +294,7 @@ mat-label {
   z-index: 2;
   overflow: hidden;
   .login-logo {
-    background: var(--login-logo, url('./processLogo.svg'));
+    background: var(--login-logo2, url('./processLogo.svg'));
     width: 235px;
     height: var(--login-logo-height, 83px);
     margin: auto;
