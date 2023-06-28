@@ -115,15 +115,7 @@
             max="500"
             required
           />
-          <!-- <input
-            #fileInput
-            type="file"
-            title="Logo para el login, es sólo para previsualización, habrá que incluirlo en el proyecto de todos modos"
-            name="lgLogo"
-            #lgLogo="ngModel"
-            [(ngModel)]="loginLogo"
-            placeholder="Login Logo"
-          /> -->
+
           <input
             title="Ancho del logo en el navbar de la aplicación, teniendo en cuenta que el alto será 40px. Procurad que esta imagen no tenga márgenes"
             type="number"
@@ -136,40 +128,24 @@
             max="500"
             required
           />
-          <!-- <input
-            #fileInput
-            type="file"
-            title="Logo para el navbar, es sólo para previsualización, habrá que incluirlo en el proyecto de todos modos"
-            name="nbLogo"
-            #nbLogo="ngModel"
-            [(ngModel)]="navbarLogo"
-            placeholder="Navbar Logo"
-          /> -->
         </div>
-
-        <!-- <label>
-          <input
-            class="checkbox"
-            type="checkbox"
-            id="wideumL"
-            #wideumLogo="ngModel"
-            [(checked)]="wideumLogo"
-          />
-          show wideum Logo</label
-        ><br /> -->
+        <div (click)="toggleWideumLogo()">
+          <div class="fakecheck">
+            <p>Wideum Logo</p>
+            <img
+              *ngIf="showWideumLogo"
+              src="https://cdn-icons-png.flaticon.com/512/190/190411.png "
+              width="30px"
+            />
+            <div
+              *ngIf="!showWideumLogo"
+              style="height:30px; width:30px; border-radius:50px;
+          background-color:#43ba80"
+            ></div>
+          </div>
+        </div>
       </form>
-      <!-- <div
-        id="colorResult"
-        style="height:10px; width:100%;margin-bottom:8px; margin-top:-5px;"
-      ></div> -->
-      <!-- <button
-        mat-flat-button
-        class="login-button btn-primary"
-        (click)="calculateWhitelabel()"
-      >
-       [disabled]="login.invalid || password.invalid" 
-        <span> calcular</span>
-      </button> -->
+
       <button
         style="margin-top:10px"
         mat-flat-button

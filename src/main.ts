@@ -22,7 +22,7 @@ export class App implements DoCheck {
   loginLogoHeight: any = 150;
   navbarLogoWidth: any = 260;
 
-  wideumLogo: any;
+  showWideumLogo = true;
   mostrarGenerar = false;
   valido = true;
   template: any = {
@@ -128,26 +128,6 @@ export class App implements DoCheck {
     this.template.styles[3].value =
       'rgba(' + redcolorDark + ',' + greencolorDark + ',' + bluecolorDark + ')';
 
-    // // --complementary-color
-    // let opositeRed = 255 - this.redColor;
-    // let opositeGreen = 255 - this.greenColor;
-    // let opositeBlue = 255 - this.blueColor;
-    // this.template.styles[4].value =
-    //   'rgba(' + opositeRed + ',' + opositeGreen + ',' + opositeBlue + ')';
-
-    // // --complementary-color dark
-    // let opositeRedcolorDark = opositeRed - 50 > 0 ? opositeRed - 50 : 0;
-    // let opositeGreencolorDark = opositeGreen - 50 > 0 ? opositeGreen - 50 : 0;
-    // let opositeBluecolorDark = opositeBlue - 50 > 0 ? opositeBlue - 50 : 0;
-    // this.template.styles[5].value =
-    //   'rgba(' +
-    //   opositeRedcolorDark +
-    //   ',' +
-    //   opositeGreencolorDark +
-    //   ',' +
-    //   opositeBluecolorDark +
-    //   ')';
-
     // --login-logo-height
     this.template.styles[4].value = this.loginLogoHeight + 'px';
 
@@ -165,7 +145,7 @@ export class App implements DoCheck {
     // '"url(\'' + this.navbarLogo + '\')"';
 
     //--login-wideum-logo-display
-    if (this.wideumLogo == false) {
+    if (this.showWideumLogo == false) {
       this.template.styles[8].value = 'none';
     } else {
       this.template.styles[8].value = 'block';
@@ -210,6 +190,11 @@ export class App implements DoCheck {
           ')'
       );
     }
+  }
+
+  toggleWideumLogo(): void {
+    this.showWideumLogo = !this.showWideumLogo;
+    console.log('this.showWideumLogo', this.showWideumLogo);
   }
 }
 

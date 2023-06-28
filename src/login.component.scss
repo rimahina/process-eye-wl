@@ -323,8 +323,18 @@ input {
 
 .images-input {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 0 8px;
+}
+
+.fakecheck {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  grid-gap: 13px;
+  font-family: sans-serif;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 @media (max-width: 900px) {
