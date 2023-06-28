@@ -50,7 +50,7 @@
 <div class="login-background">
   <div class="container-box">
     <div id="login-view" class="form-section">
-      <b>Generador de whitelabel</b>
+      <b>Whitelabel</b>
       <!--<input [formControl]="login" class="login-name" ng-model="login" placeholder="{{ 'login_login_placeholder' | translate }}">-->
 
       <form #whitelabelForm="ngForm" (ngSubmit)="calculateWhitelabel()">
@@ -131,17 +131,17 @@
         </div>
         <div (click)="toggleWideumLogo()">
           <div class="fakecheck">
-            <p>Wideum Logo</p>
             <img
               *ngIf="showWideumLogo"
               src="https://cdn-icons-png.flaticon.com/512/190/190411.png "
-              width="30px"
+              width="25px"
             />
             <div
               *ngIf="!showWideumLogo"
-              style="height:30px; width:30px; border-radius:50px;
+              style="height:25px; width:25px; border-radius:50px;
           background-color:#43ba80"
             ></div>
+            <p>Wideum Logo</p>
           </div>
         </div>
       </form>

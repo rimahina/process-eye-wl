@@ -101,9 +101,9 @@ mat-label {
   position: fixed;
   bottom: 0;
   left: 0;
-  margin: 20px;
-  height: 44px;
-  width: 204px;
+  margin: 15px;
+  height: 26px;
+  width: 120px;
   background: var(--logo-wideum, url('./wideum.svg'));
   background-size: contain;
   background-repeat: no-repeat;
@@ -131,8 +131,8 @@ mat-label {
 }
 
 .container-box {
-  width: 60%;
-  height: 65%;
+  width: 65%;
+  height: 85%;
   min-width: 250px;
   background-color: white;
   border-radius: 12px;
@@ -147,7 +147,8 @@ mat-label {
 .form-section {
   b {
     font-family: arial;
-    font-size: 18px;
+    font-size: 17px;
+    margin-top: 20px;
   }
   font: var(--baloo-bold);
   padding: 0 20%;
@@ -311,8 +312,8 @@ input {
   background: rgba(255, 255, 255, 0.8);
   border: none;
   font-size: 15px !important;
-  padding: 11px;
-  margin-bottom: 14px;
+  padding: 5px 11px;
+  margin-bottom: 10px;
 }
 
 .color-input {
