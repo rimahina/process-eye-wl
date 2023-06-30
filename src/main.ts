@@ -62,7 +62,7 @@ export class App implements DoCheck {
       },
       {
         var: '--navbar-logo',
-        value: "url('/assets/whitelabels/maqcenter/navbar-logo.svg",
+        value: "url('/assets/whitelabels/maqcenter/login-logo.svg",
       },
 
       {
