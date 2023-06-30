@@ -21,9 +21,12 @@ export class App implements DoCheck {
   blueColor: any = 221;
   loginLogoHeight: any = 150;
   navbarLogoWidth: any = 110;
-  public imagePath: string;
-  imageName: string;
-  imgURL: any;
+  public loginlogoPath: string;
+  loginlogoName: string;
+  loginlogoURL: any;
+  public navbarPath: string;
+  navbarName: string;
+  navbarURL: any;
   public message: string;
 
   showWideumLogo = true;
@@ -62,7 +65,7 @@ export class App implements DoCheck {
       },
       {
         var: '--navbar-logo',
-        value: "url('/assets/whitelabels/maqcenter/login-logo.svg",
+        value: "url('/assets/whitelabels/maqcenter/navbar-logo.svg",
       },
 
       {
@@ -140,12 +143,12 @@ export class App implements DoCheck {
 
     // var: '--login-logo',
 
-    if (this.imageName) {
+    if (this.loginlogoName) {
       this.template.styles[6].value =
         "url('/assets/whitelabels/" +
         this.template.name +
         '/' +
-        this.imageName +
+        this.loginlogoName +
         ')';
     } else {
       this.template.styles[6].value =
@@ -155,12 +158,19 @@ export class App implements DoCheck {
     // '"url(\'' + this.loginLogo + '\')"';
 
     // var: '--navbar-logo',
-    if (this.imageName) {
+    if (this.navbarName) {
       this.template.styles[7].value =
         "url('/assets/whitelabels/" +
         this.template.name +
         '/' +
-        this.imageName +
+        this.navbarName +
+        ')';
+    } else if (this.loginlogoName) {
+      this.template.styles[7].value =
+        "url('/assets/whitelabels/" +
+        this.template.name +
+        '/' +
+        this.loginlogoName +
         ')';
     } else {
       this.template.styles[7].value =
@@ -216,7 +226,7 @@ export class App implements DoCheck {
     }
   }
 
-  preview(files: any) {
+  loginlogoPreview(files: any) {
     if (files.length === 0) return;
 
     var mimeType = files[0].type;
@@ -226,11 +236,29 @@ export class App implements DoCheck {
     }
 
     var reader = new FileReader();
-    this.imageName = files[0].name;
-    this.imagePath = files;
+    this.loginlogoName = files[0].name;
+    this.loginlogoPath = files;
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
-      this.imgURL = reader.result;
+      this.loginlogoURL = reader.result;
+    };
+  }
+
+  navbarPreview(files: any) {
+    if (files.length === 0) return;
+
+    var mimeType = files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.message = 'Only images are supported.';
+      return;
+    }
+
+    var reader = new FileReader();
+    this.navbarName = files[0].name;
+    this.navbarPath = files;
+    reader.readAsDataURL(files[0]);
+    reader.onload = (_event) => {
+      this.navbarURL = reader.result;
     };
   }
 

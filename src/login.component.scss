@@ -381,6 +381,7 @@ input {
   font-size: 15px !important;
   padding: 5px 11px;
   margin-bottom: 10px;
+  height: 20px;
 }
 
 .color-input {
@@ -391,8 +392,8 @@ input {
 
 .images-input {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0 8px;
+  grid-template-columns: 2fr 70px;
+  grid-gap: 0 10px;
 }
 
 .fakecheck {

@@ -1,7 +1,18 @@
 <div class="header">
   <div>
-    <div *ngIf="!imgURL" class="navbar-logo"></div>
-    <img *ngIf="imgURL" [src]="imgURL" height="40" class="navbar-logo sin" />
+    <div *ngIf="!loginlogoURL && !navbarURL" class="navbar-logo"></div>
+    <img
+      *ngIf="loginlogoURL && !navbarURL"
+      [src]="loginlogoURL"
+      height="40"
+      class="navbar-logo sin"
+    />
+    <img
+      *ngIf="navbarURL"
+      [src]="navbarURL"
+      height="40"
+      class="navbar-logo sin"
+    />
   </div>
   <img
     src="https://drive.google.com/uc?export=view&id=1vX0k4CgXKNQWvcN671wCuc_downW999w"
@@ -113,7 +124,31 @@
             required
           />
         </div>
-        <div class="images-input">
+        <div class="images-input loginlogo">
+          <div style="height: 20px;">
+            <label
+              class="custom-file-upload"
+              title="login-logo tomará el nombre y la extensión que le demos aquí."
+            >
+              <span *ngIf="!loginlogoURL" id="fileName">login-logo.svg</span>
+              <span *ngIf="loginlogoURL" id="fileName">
+                {{ loginlogoName }}</span
+              >
+
+              <input
+                #loginlogofile
+                type="file"
+                class="input-file"
+                accept="image/*"
+                (change)="loginlogoPreview(loginlogofile.files)"
+              />
+            </label>
+            <img
+              class="input-icon"
+              src="https://cdn-icons-png.flaticon.com/128/8191/8191595.png"
+              width="21px"
+            />
+          </div>
           <input
             title="Altura del logo al ser mostrado en la ventana de login, teniendo en cuenta que el ancho siempre será 236px. Procurad que esta imagen no tenga márgenes"
             type="number"
@@ -126,7 +161,34 @@
             max="500"
             required
           />
-
+        </div>
+        <div class="images-input nabvbar">
+          <div style="height: 20px;">
+            <label
+              class="custom-file-upload"
+              title="navbar-logo tomará el nombre y la extensión que le demos aquí"
+            >
+              <span *ngIf="!navbarURL && !loginlogoURL" id="fileName"
+                >navbar-logo.svg</span
+              >
+              <span *ngIf="!navbarURL && loginlogoURL" id="fileName">
+                {{ loginlogoName }}</span
+              >
+              <span *ngIf="navbarURL" id="fileName"> {{ navbarName }}</span>
+              <input
+                #navbarfile
+                type="file"
+                class="input-file"
+                accept="image/*"
+                (change)="navbarPreview(navbarfile.files)"
+              />
+            </label>
+            <img
+              class="input-icon"
+              src="https://cdn-icons-png.flaticon.com/128/8191/8191595.png"
+              width="21px"
+            />
+          </div>
           <input
             title="Ancho del logo en el navbar de la aplicación, teniendo en cuenta que el alto será 40px. Procurad que esta imagen no tenga márgenes"
             type="number"
@@ -140,26 +202,7 @@
             required
           />
         </div>
-        <label
-          class="custom-file-upload"
-          title="El json tomará el nombre y la extensión que le demos aquí. El navBarlogo se tendrá que cambiar a mano"
-        >
-          <span *ngIf="!imgURL" id="fileName">login-logo.svg</span>
-          <span *ngIf="imgURL" id="fileName"> {{ imageName }}</span>
 
-          <input
-            #file
-            type="file"
-            class="input-file"
-            accept="image/*"
-            (change)="preview(file.files)"
-          />
-        </label>
-        <img
-          class="input-icon"
-          src="https://cdn-icons-png.flaticon.com/128/8191/8191595.png"
-          width="21px"
-        />
         <div (click)="toggleWideumLogo()">
           <div class="fakecheck">
             <img
@@ -188,8 +231,13 @@
       </button>
     </div>
     <div class="logo-section">
-      <div *ngIf="!imgURL" class="login-logo2"></div>
-      <img *ngIf="imgURL" [src]="imgURL" height="200" class="login-logo" />
+      <div *ngIf="!loginlogoURL" class="login-logo2"></div>
+      <img
+        *ngIf="loginlogoURL"
+        [src]="loginlogoURL"
+        height="200"
+        class="login-logo"
+      />
     </div>
   </div>
 </div>
