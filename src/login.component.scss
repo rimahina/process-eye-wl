@@ -150,6 +150,30 @@ mat-label {
     font-size: 17px;
     margin-top: 20px;
   }
+  .input-file {
+    color: black;
+    display: none;
+  }
+  .custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    width: calc(100% - 20px);
+    height: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+  }
+  .custom-file-upload span {
+    color: black;
+    font-size: 14px;
+    position: relative;
+    bottom: 11px;
+  }
+  img.input-icon {
+    position: relative;
+    bottom: 2px;
+    float: right;
+  }
   font: var(--baloo-bold);
   padding: 0 20%;
   color: white;
@@ -294,7 +318,7 @@ mat-label {
   align-content: center;
   z-index: 2;
   overflow: hidden;
-  .login-logo {
+  .login-logo2 {
     background: var(--login-logo2, url('./processLogo.svg'));
     width: 235px;
     height: var(--login-logo-height, 83px);
@@ -302,6 +326,16 @@ mat-label {
     max-width: 80%;
     background-size: contain;
     background-repeat: no-repeat;
+    z-index: 3;
+  }
+  .login-logo {
+    width: 235px;
+    height: var(--login-logo-height, 83px);
+    margin: auto;
+    max-width: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white;
     z-index: 3;
   }
 }

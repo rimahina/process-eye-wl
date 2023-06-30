@@ -21,6 +21,9 @@ export class App implements DoCheck {
   blueColor: any = 221;
   loginLogoHeight: any = 150;
   navbarLogoWidth: any = 260;
+  public imagePath: string;
+  imgURL: any;
+  public message: string;
 
   showWideumLogo = true;
   mostrarGenerar = false;
@@ -137,6 +140,7 @@ export class App implements DoCheck {
     // var: '--login-logo',
     this.template.styles[6].value =
       "url('/assets/whitelabels/" + this.template.name + "/login-logo.svg')";
+    
     // '"url(\'' + this.loginLogo + '\')"';
 
     // var: '--navbar-logo',
@@ -190,6 +194,23 @@ export class App implements DoCheck {
           ')'
       );
     }
+  }
+
+  preview(files: any) {
+    if (files.length === 0) return;
+
+    var mimeType = files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.message = 'Only images are supported.';
+      return;
+    }
+
+    var reader = new FileReader();
+    this.imagePath = files;
+    reader.readAsDataURL(files[0]);
+    reader.onload = (_event) => {
+      this.imgURL = reader.result;
+    };
   }
 
   toggleWideumLogo(): void {

@@ -129,6 +129,25 @@
             required
           />
         </div>
+        <label
+          class="custom-file-upload"
+          title="Logo-login, sólo sirve para calcular la redimensión, no cambia el nombre en el json"
+        >
+          <span *ngIf="!imgURL" id="fileName"> Cambiar logo</span>
+          <span *ngIf="imgURL" id="fileName"> {{ imagePath }}</span>
+          <img
+            class="input-icon"
+            src="https://cdn-icons-png.flaticon.com/128/8191/8191595.png"
+            width="21px"
+          />
+          <input
+            #file
+            type="file"
+            class="input-file"
+            accept="image/*"
+            (change)="preview(file.files)"
+          />
+        </label>
         <div (click)="toggleWideumLogo()">
           <div class="fakecheck">
             <img
@@ -141,7 +160,7 @@
               style="height:25px; width:25px; border-radius:50px;
           background-color:#43ba80"
             ></div>
-            <p>Wideum Logo</p>
+            <p style="margin: 3px 0px;">Wideum Logo</p>
           </div>
         </div>
       </form>
@@ -157,7 +176,8 @@
       </button>
     </div>
     <div class="logo-section">
-      <div class="login-logo"></div>
+      <div *ngIf="!imgURL" class="login-logo2"></div>
+      <img *ngIf="imgURL" [src]="imgURL" height="200" class="login-logo" />
     </div>
   </div>
 </div>
