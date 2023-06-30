@@ -69,6 +69,36 @@ mat-label {
   font-family: 'Baloo 2' !important;
 }
 
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 0 1%;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+  background: #fff;
+  position: fixed;
+  z-index: 3;
+  .botonera {
+    position: relative;
+    top: 4px;
+    right: 5px;
+  }
+  .navbar-logo {
+    background: var(--login-logo2, url('./processLogo.svg'));
+    width: var(--navbar-logo-width, 83px);
+    height: 40px;
+    margin: 10px 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 4;
+  }
+  .navbar-logo.sin {
+    background: none;
+  }
+}
+
 .green-corner {
   position: fixed;
   bottom: 0;
@@ -132,11 +162,11 @@ mat-label {
 
 .container-box {
   width: 65%;
-  height: 85%;
+  height: 80% !important;
   min-width: 250px;
-  background-color: white;
+  background-color: #fff;
   border-radius: 12px;
-  margin: auto;
+  margin: 97px auto auto auto;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -20,7 +20,7 @@ export class App implements DoCheck {
   greenColor: any = 164;
   blueColor: any = 221;
   loginLogoHeight: any = 150;
-  navbarLogoWidth: any = 260;
+  navbarLogoWidth: any = 110;
   public imagePath: string;
   imageName: string;
   imgURL: any;
@@ -142,16 +142,30 @@ export class App implements DoCheck {
 
     if (this.imageName) {
       this.template.styles[6].value =
-      "url('/assets/whitelabels/" + this.template.name + "/" + this.imageName +")";
+        "url('/assets/whitelabels/" +
+        this.template.name +
+        '/' +
+        this.imageName +
+        ')';
     } else {
-    this.template.styles[6].value =
-      "url('/assets/whitelabels/" + this.template.name + "/login-logo.svg')"; }
+      this.template.styles[6].value =
+        "url('/assets/whitelabels/" + this.template.name + "/login-logo.svg')";
+    }
 
     // '"url(\'' + this.loginLogo + '\')"';
 
     // var: '--navbar-logo',
-    this.template.styles[7].value =
-      "url('/assets/whitelabels/" + this.template.name + "/navbar-logo.svg')";
+    if (this.imageName) {
+      this.template.styles[7].value =
+        "url('/assets/whitelabels/" +
+        this.template.name +
+        '/' +
+        this.imageName +
+        ')';
+    } else {
+      this.template.styles[7].value =
+        "url('/assets/whitelabels/" + this.template.name + "/navbar-logo.svg')";
+    }
     // '"url(\'' + this.navbarLogo + '\')"';
 
     //--login-wideum-logo-display
