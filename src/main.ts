@@ -139,8 +139,13 @@ export class App implements DoCheck {
     this.template.styles[5].value = this.navbarLogoWidth + 'px';
 
     // var: '--login-logo',
+
+    if (this.imageName) {
+      this.template.styles[6].value =
+      "url('/assets/whitelabels/" + this.template.name + "/" + this.imageName +")";
+    } else {
     this.template.styles[6].value =
-      "url('/assets/whitelabels/" + this.template.name + "/login-logo.svg')";
+      "url('/assets/whitelabels/" + this.template.name + "/login-logo.svg')"; }
 
     // '"url(\'' + this.loginLogo + '\')"';
 
