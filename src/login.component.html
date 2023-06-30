@@ -134,12 +134,8 @@
           title="Logo-login, sólo sirve para calcular la redimensión, no cambia el nombre en el json"
         >
           <span *ngIf="!imgURL" id="fileName"> Cambiar logo</span>
-          <span *ngIf="imgURL" id="fileName"> {{ imagePath }}</span>
-          <img
-            class="input-icon"
-            src="https://cdn-icons-png.flaticon.com/128/8191/8191595.png"
-            width="21px"
-          />
+          <span *ngIf="imgURL" id="fileName"> {{ imageName }}</span>
+
           <input
             #file
             type="file"
@@ -148,6 +144,11 @@
             (change)="preview(file.files)"
           />
         </label>
+        <img
+          class="input-icon"
+          src="https://cdn-icons-png.flaticon.com/128/8191/8191595.png"
+          width="21px"
+        />
         <div (click)="toggleWideumLogo()">
           <div class="fakecheck">
             <img

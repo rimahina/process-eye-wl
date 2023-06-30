@@ -162,6 +162,8 @@ mat-label {
     height: 16px;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .custom-file-upload span {
     color: black;
@@ -171,8 +173,9 @@ mat-label {
   }
   img.input-icon {
     position: relative;
-    bottom: 2px;
+    bottom: 30px;
     float: right;
+    opacity: 60%;
   }
   font: var(--baloo-bold);
   padding: 0 20%;

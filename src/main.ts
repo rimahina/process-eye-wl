@@ -22,6 +22,7 @@ export class App implements DoCheck {
   loginLogoHeight: any = 150;
   navbarLogoWidth: any = 260;
   public imagePath: string;
+  imageName: string;
   imgURL: any;
   public message: string;
 
@@ -140,7 +141,7 @@ export class App implements DoCheck {
     // var: '--login-logo',
     this.template.styles[6].value =
       "url('/assets/whitelabels/" + this.template.name + "/login-logo.svg')";
-    
+
     // '"url(\'' + this.loginLogo + '\')"';
 
     // var: '--navbar-logo',
@@ -206,6 +207,7 @@ export class App implements DoCheck {
     }
 
     var reader = new FileReader();
+    this.imageName = files[0].name;
     this.imagePath = files;
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
