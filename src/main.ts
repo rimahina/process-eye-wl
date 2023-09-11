@@ -2,7 +2,7 @@ import 'zone.js/dist/zone';
 import { Component, DoCheck, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { NgForm, Validators, FormsModule } from '@angular/forms';
+import { NgForm, FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
