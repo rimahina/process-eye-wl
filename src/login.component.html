@@ -86,6 +86,16 @@
           placeholder="Nombre"
           required
         />
+        <input
+          title="Nombre de la aplicación cuando se aplique el WL"
+          type="text"
+          id="appName"
+          name="appName"
+          #name="ngModel"
+          [(ngModel)]="template.appName"
+          placeholder="Nombre Aplicación"
+          required
+        />
         <div class="color-input">
           <input
             title="Valor de Red en el color principal en formato RGB"

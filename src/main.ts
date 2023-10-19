@@ -34,6 +34,7 @@ export class App implements DoCheck {
   valido = true;
   template: any = {
     name: 'Nombre',
+    appName: 'Process eye',
     styles: [
       {
         var: '--primary-color',
