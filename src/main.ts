@@ -150,7 +150,7 @@ export class App implements DoCheck {
         this.template.name +
         '/' +
         this.loginlogoName +
-        ')';
+        "')";
     } else {
       this.template.styles[6].value =
         "url('/assets/whitelabels/" + this.template.name + "/login-logo.svg')";
@@ -165,14 +165,14 @@ export class App implements DoCheck {
         this.template.name +
         '/' +
         this.navbarName +
-        ')';
+        "')";
     } else if (this.loginlogoName) {
       this.template.styles[7].value =
         "url('/assets/whitelabels/" +
         this.template.name +
         '/' +
         this.loginlogoName +
-        ')';
+        "')";
     } else {
       this.template.styles[7].value =
         "url('/assets/whitelabels/" + this.template.name + "/navbar-logo.svg')";
